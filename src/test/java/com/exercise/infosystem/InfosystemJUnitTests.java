@@ -32,7 +32,8 @@ public class InfosystemJUnitTests {
 		assertThat(personTest.getMunicipality()).isEqualTo("Helsinki");
 		
 		Building buildingTest = new Building(51, "Kaarrostie 46", personTest, 2016, "Rented", 2100, "Store", estateTest);
-		assertThat(buildingTest.getOwner()).isEqualTo(personTest);
+		assertThat(buildingTest.getOwner().getPersonalIdentityCode()).isNotNull();
+		assertThat(buildingTest.getRealEstate().getBuildingsNo()).isEqualTo(4);
 	}
 	
 }
